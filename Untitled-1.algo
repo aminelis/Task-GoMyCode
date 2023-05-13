@@ -1,0 +1,25 @@
+ALGORITHM CountWordsAndVowels
+VAR
+   str1 : STRING[];
+   i : INTEGER;
+   CountW : INTEGER := 0;
+   CountV : INTEGER := 0;
+BEGIN
+   Write("A string can be initialized in different ways.");
+   Read(str1);
+   WHILE ( str1[i]=' ') DO
+       WHILE (i < str1.length) DO
+           str1[i] := str1[i+1];
+           i := i+1;
+       END_WHILE
+   END_WHILE
+   
+       FOR i FROM 0 TO str1.length-1 STEP 1 DO
+        IF ( str1[i]='') THEN
+        CountW := CountW+1; 
+        END_IF
+        IF ( str1[i] in {a,e,i,o,u,y}) THEN
+        CountV := CountV+1; 
+        END_IF
+       END_FOR
+END
