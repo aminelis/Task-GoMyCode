@@ -1,0 +1,38 @@
+ALGORITHM DistinctElements
+VAR
+   tab1 : ARRAY_OF INTEGER[6]; 
+   tab2 : ARRAY_OF INTEGER[5]; 
+   i,j : INTEGER;
+   sum := 0;
+   
+BEGIN
+   //tab1 := {1,2,3,5,7,8};
+   //tab2 := [2, 4, 1, 9, 3]; 
+   FOR i FROM 0 TO 5 DO
+       Read(tab1[i]);// insert from user
+   END_FOR
+   FOR j FROM 0 TO 4 DO
+       Read(tab2[j]);// insert from user
+   END_FOR
+
+IF (tab1.length >= tab2.length)  THEN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+        FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+        IF (tab1[i] <> tab2[j] )
+            sum := sum + tab1[i] 
+         END_IF
+    
+    END_FOR
+   END_FOR
+   
+Else  
+   FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+    IF (tab1[i] <> tab2[j] )
+        sum := sum + tab2[j]
+    END_IF
+    END_FOR
+   END_FOR
+
+END_IF
+END
