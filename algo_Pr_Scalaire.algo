@@ -1,0 +1,27 @@
+FUNCTION dot_product (V1 : ARRAY_OF INTEGER, V2 : ARRAY_OF INTEGER) : integer
+VAR
+   i,Ps : INTEGER;
+BEGIN
+i := 0;
+Ps := 0
+WHILE (V1.length = V2.length and i < V1.length ) DO
+      Ps := Ps + V1[i]*V2[i]
+      i := i+1;
+   END_WHILE
+    RETURN Ps ;
+END
+
+ALGORITHM algorithm_name
+VAR
+     tab1 : ARRAY_OF INTEGER[N];
+     tab2 : ARRAY_OF INTEGER[M];
+     Pr_S : INTEGER;
+BEGIN
+    Pr_S := dot_product(tab1,tab2);
+    IF (Pr_S == 0) THEN
+        write("vectors are orthogonal");
+    ELSE
+        write("vectors are not orthogonal");
+    END_IF
+
+END
